@@ -20,6 +20,8 @@ public class Controller {
     @FXML
     private TitledPane tpMeters;
 
+    protected LineService service = new LineService();
+
     @FXML
     public void initialize() {
         setTpMeters();
@@ -33,7 +35,6 @@ public class Controller {
 
     public void setCbDevice() {
 
-        LineService service = new LineService();
         List<LineDTO> lines = service.lineEndpointConnectionByRestTemplate();
         cbDevice.getItems().addAll(FXCollections.observableList(lines));
 

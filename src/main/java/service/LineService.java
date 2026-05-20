@@ -9,10 +9,12 @@ import java.util.List;
 
 public class LineService {
 
+    RestTemplate restTemplate = new RestTemplate();
+
     public List<LineDTO> lineEndpointConnectionByRestTemplate() {
+
         try {
 
-            RestTemplate restTemplate = new RestTemplate();
             URL url = new URL("http://localhost:8080/lines");
 
             ResponseEntity<LineDTO[]> response = restTemplate.exchange(url.toURI(), HttpMethod.GET,  HttpEntity.EMPTY, LineDTO[].class);

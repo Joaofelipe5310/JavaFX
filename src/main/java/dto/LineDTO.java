@@ -18,6 +18,18 @@ public class LineDTO {
 
     public int getId() {return id; }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategories(List<CategoryDTO> categories) {
+        this.categories = categories;
+    }
+
     public String getName() { return name; }
 
     public List<CategoryDTO> getCategories() { return categories;}
