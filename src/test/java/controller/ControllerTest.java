@@ -11,7 +11,6 @@ import javafx.scene.control.TreeView;
 import org.junit.Before;
 import org.junit.Test;
 import service.LineService;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,8 +23,6 @@ public class ControllerTest {
 
     TitledPane tpMeters;
 
-    Field field;
-
     ComboBox<LineDTO> cbDevice;
 
     TreeView<String> treeData;
@@ -33,7 +30,7 @@ public class ControllerTest {
     LineService service;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         new JFXPanel();
 
@@ -44,17 +41,9 @@ public class ControllerTest {
         cbDevice = new ComboBox<>();
         treeData = new TreeView<>();
 
-        field = Controller.class.getDeclaredField("tpMeters");
-        field.setAccessible(true);
-        field.set(controller, tpMeters);
-
-        Field cbField = Controller.class.getDeclaredField("cbDevice");
-        cbField.setAccessible(true);
-        cbField.set(controller, cbDevice);
-
-        Field treeField = Controller.class.getDeclaredField("treeData");
-        treeField.setAccessible(true);
-        treeField.set(controller, treeData);
+        controller.tpMeters = tpMeters;
+        controller.treeData = treeData;
+        controller.cbDevice = cbDevice;
 
         controller.service = service;
     }

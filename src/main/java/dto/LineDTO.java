@@ -18,6 +18,10 @@ public class LineDTO {
 
     public int getId() {return id; }
 
+    public String getName() { return name; }
+
+    public List<CategoryDTO> getCategories() { return categories;}
+
     public void setId(int id) {
         this.id = id;
     }
@@ -29,10 +33,6 @@ public class LineDTO {
     public void setCategories(List<CategoryDTO> categories) {
         this.categories = categories;
     }
-
-    public String getName() { return name; }
-
-    public List<CategoryDTO> getCategories() { return categories;}
 
     @Override
     public String toString() {

@@ -12,13 +12,13 @@ import java.util.List;
 public class Controller {
 
     @FXML
-    private ComboBox<LineDTO> cbDevice;
+    protected ComboBox<LineDTO> cbDevice;
 
     @FXML
-    private TreeView<String> treeData;
+    protected TreeView<String> treeData;
 
     @FXML
-    private TitledPane tpMeters;
+    protected TitledPane tpMeters;
 
     protected LineService service = new LineService();
 

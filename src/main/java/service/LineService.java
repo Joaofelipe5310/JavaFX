@@ -3,21 +3,21 @@ package service;
 import dto.LineDTO;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
-import java.net.URL;
+
+import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 
 public class LineService {
 
-    RestTemplate restTemplate = new RestTemplate();
+    protected RestTemplate restTemplate = new RestTemplate();
+
+    protected String url = "http://localhost:8080/lines";
 
     public List<LineDTO> lineEndpointConnectionByRestTemplate() {
 
         try {
-
-            URL url = new URL("http://localhost:8080/lines");
-
-            ResponseEntity<LineDTO[]> response = restTemplate.exchange(url.toURI(), HttpMethod.GET,  HttpEntity.EMPTY, LineDTO[].class);
+            ResponseEntity<LineDTO[]> response = restTemplate.exchange(new URI(url), HttpMethod.GET,  HttpEntity.EMPTY, LineDTO[].class);
 
             LineDTO[] lines = response.getBody();
 
