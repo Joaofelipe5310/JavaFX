@@ -31,10 +31,10 @@ public class CategoryDTO {
         this.models = models;
     }
 
+    public List<ModelDTO> getModels() { return models; }
+
     @Override
     public String toString() {
         return name;
     }
-
-    public List<ModelDTO> getModels() { return models; }
 }
