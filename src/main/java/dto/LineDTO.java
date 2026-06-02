@@ -22,6 +22,18 @@ public class LineDTO {
 
     public List<CategoryDTO> getCategories() { return categories;}
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategories(List<CategoryDTO> categories) {
+        this.categories = categories;
+    }
+
     @Override
     public String toString() {
         return name;

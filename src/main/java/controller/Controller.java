@@ -12,13 +12,15 @@ import java.util.List;
 public class Controller {
 
     @FXML
-    private ComboBox<LineDTO> cbDevice;
+    protected ComboBox<LineDTO> cbDevice;
 
     @FXML
-    private TreeView<String> treeData;
+    protected TreeView<String> treeData;
 
     @FXML
-    private TitledPane tpMeters;
+    protected TitledPane tpMeters;
+
+    protected LineService service = new LineService();
 
     @FXML
     public void initialize() {
@@ -33,7 +35,6 @@ public class Controller {
 
     public void setCbDevice() {
 
-        LineService service = new LineService();
         List<LineDTO> lines = service.lineEndpointConnectionByRestTemplate();
         cbDevice.getItems().addAll(FXCollections.observableList(lines));
 
